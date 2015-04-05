@@ -1,11 +1,14 @@
 using namespace std;
-
+#ifndef AIRPLANE_H
+#define AIRPLANE_H
 class Airplane {
    private:
-    int gas;
+    int gas; //only matters for landing planes, set to random amount
+    int timeSpent; //constructed at 0
    public:
     Airplane();
     int getGas();
-    void setGas();
+    void decrementGas();
 
 }
+#endif

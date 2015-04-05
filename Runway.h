@@ -1,5 +1,6 @@
 using namespace std;
-
+#ifndef RUNWAY_H
+#define RUNWAY_H
 class Runway {
    private:
     bool isBusy;
@@ -12,3 +13,4 @@ class Runway {
     void startTakeoff();
     int tickDown(); //timeRemaining--
 }
+#endif
