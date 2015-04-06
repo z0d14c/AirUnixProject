@@ -12,5 +12,5 @@ class Runway {
     void startLanding();
     void startTakeoff();
     int tickDown(); //timeRemaining--
-}
+};
 #endif

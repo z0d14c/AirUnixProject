@@ -1,23 +1,22 @@
 #include "Statkeeper.h"
 
-template <class T>
-Statkeeper<T>::Statkeeper(int simTime){
+Statkeeper::Statkeeper(int simTime){
 }
-void Statkeeper<T>::plusTakeoffPlanes(){
+void Statkeeper::plusTakeoffPlanes(){
 }
-void Statkeeper<T>::plusLandedPlanes(){
+void Statkeeper::plusLandedPlanes(){
 }
-void Statkeeper<T>::plusCrashPlanes(){
+void Statkeeper::plusCrashPlanes(){
 }
-void Statkeeper<T>::plusTakeoffTime(int time){
+void Statkeeper::plusTakeoffTime(int time){
 }
-void Statkeeper<T>::plusLandingTime(int time){
+void Statkeeper::plusLandingTime(int time){
 }
-int Statkeeper<T>::avgTakeoffTime(){
+int Statkeeper::avgTakeoffTime(){
 return 0;
 }
-int Statkeeper<T>::avgLandingTime(){
+int Statkeeper::avgLandingTime(){
 return 0;
 }
-void Statkeeper<T>::printStats(){
+void Statkeeper::printStats(){
 }

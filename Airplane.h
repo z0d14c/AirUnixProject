@@ -9,6 +9,5 @@ class Airplane {
     Airplane();
     int getGas();
     void decrementGas();
-
-}
+};
 #endif

@@ -1,14 +1,14 @@
 #include "Runway.h"
 
-template <class T>
-Runway<T>::Runway(){
+Runway::Runway(){
 }
-bool Runway<T>::getBusy(){
+bool Runway::getBusy(){
+return true;
 }
-void Runway<T>::startLanding(){
+void Runway::startLanding(){
 }
-void Runway<T>::startTakeoff(){
+void Runway::startTakeoff(){
 }
-int Runway<T>::tickDown(){
+int Runway::tickDown(){
 return 0;
 }

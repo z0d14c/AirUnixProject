@@ -4,12 +4,16 @@
 template <class T>
 Queue<T>::Queue(){
 }
-void Queue<T>::enqueue(){
+template <class T>
+void Queue<T>::enqueue(T obj){
 }
-void Queue<T>::dequeue(){
+template <class T>
+T Queue<T>::dequeue(){
 }
+template <class T>
 int Queue<T>::count(){
 return 0;
 }
+template <class T>
 void Queue<T>::updatePlanes(){
 }

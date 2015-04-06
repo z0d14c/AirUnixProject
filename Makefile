@@ -2,28 +2,27 @@
 CC = g++
 PROG = AirSim
 OBJS = AirSim.o Airplane.o Boolsource.o Queue.o Runway.o Statkeeper.o
-$(PROG) : $(OBJS)
 
-$(PROG) : $(OBJS)
+$(PROG): $(OBJS)
 	$(CC) -o $(PROG) $(OBJS)
 
-AirSim.o : 
+AirSim.o: 
 	$(CC) -c AirSim.cpp
 
-AirPlane.o :
+AirPlane.o:
 	$(CC) -c AirPlane.cpp
 
-Boolsource.o :
+Boolsource.o:
 	$(CC) -c Boolsource.cpp
 
-Queue.o :
+Queue.o:
 	$(CC) -c Queue.cpp
 
-Runway.o :
- 	$(CC) -c Runway.cpp
+Runway.o:
+	$(CC) -c Runway.cpp
 
-Statkeeper.o :
+Statkeeper.o:
 	$(CC) -c Statkeeper.cpp
 
-Clean :
+Clean:
 	rm -f $(PROG) $(OBJS)

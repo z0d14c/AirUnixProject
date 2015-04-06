@@ -20,5 +20,5 @@ class Statkeeper {
     int avgTakeoffTime();
     int avgLandingTime();
     void printStats();
-}
+};
 #endif

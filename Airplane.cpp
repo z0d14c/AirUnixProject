@@ -1,10 +1,9 @@
 #include "Airplane.h"
 
-template <class T>
-Airplane<T>::Airplane(){
+Airplane::Airplane(){
 }
-int Airplane<T>::getGas(){
+int Airplane::getGas(){
     return gas;
 }
-void Airplane<T>::decrementGas(){
+void Airplane::decrementGas(){
 }

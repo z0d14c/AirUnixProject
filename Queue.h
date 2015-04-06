@@ -1,11 +1,12 @@
 using namespace std;
 #ifndef QUEUE_H
 #define QUEUE_H
+#include <list>
 //template so that it can be an "Airplane" queue (T=airplane, in our case)
 template <class T>
 class Queue {
    private:
-    List list;
+    list<T> planelist;
 
    public:
     Queue();
@@ -15,5 +16,5 @@ class Queue {
     T dequeue();
     int count();
     void updatePlanes(); //spread events that happen after each minute
-}
+};
 #endif
