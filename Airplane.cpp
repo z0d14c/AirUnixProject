@@ -1,8 +1,8 @@
 #include "Airplane.h"
 
-Airplane::Airplane(){
-	this.gas;
-	this.timeSpent;
+Airplane::Airplane(int gas){
+	this.gas = gas;
+	this.timeSpent = 0;
 }
 int Airplane::getGas(){
     return gas;

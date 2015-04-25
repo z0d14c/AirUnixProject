@@ -13,8 +13,8 @@ int main(int argc, char* argv[]){
 	
 	BoolSource* isLanding = new BoolSource(landProb);
 	BoolSource* isTakingOff = new BoolSource(goProb);
-	Queue* landing = new Queue();
-	Queue* going = new Queue();
+	Queue* landing = new Queue(crashTime);
+	Queue* going = new Queue(crashTime);
 	Statkeeper* stats = new Statkeeper(end - start);
 	Runway* runway = new Runway(landTime,goTime);
 	Airplane* plane;
@@ -22,9 +22,9 @@ int main(int argc, char* argv[]){
 	for(int cur = start; cur < end; cur++)
 	{
 		if(isLanding->check())
-			landing->enqueue(new Airplane(crashTime));
+			landing->enqueue();
 		if(isTakingOff->check())
-			going->enqueue(new Airplane(crashTime));
+			going->enqueue();
 		if(!runway->isBusy() && landing->count() > 0)
 		{
 			while(true)
