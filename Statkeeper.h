@@ -9,6 +9,8 @@ class Statkeeper {
     int simTime;
     int landingTime;
     int takeoffTime;
+    double avg1;
+    double ag2;
 
    public:
     Statkeeper(int simTime);
