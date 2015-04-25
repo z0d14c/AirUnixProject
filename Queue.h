@@ -10,11 +10,11 @@ class Queue {
 
    public:
     Queue();
-    bool landing; //if is landing-type queue
     int crashed; //number of planes that have crashed
-    void enqueue(T obj);
-    T dequeue();
-    int count();
+    int crashtime; //time or "gas" until crash
+    void enqueue(); //add new plane
+    T dequeue(); //remove old plane
+    int count(); //numplanes in queue
     void updatePlanes(); //spread events that happen after each minute
 };
 #endif

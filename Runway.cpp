@@ -2,13 +2,27 @@
 
 Runway::Runway(){
 }
+Runway::Runway(int landTime, int takeoffTime){
+    this.landingTime = landtime;
+    this.takeoffTime = takeoffTime;
+}
 bool Runway::getBusy(){
-return true;
+    return this.isBusy;
 }
 void Runway::startLanding(){
+    this.isBusy = true;
+    this.timeRemaining = this.landingTime;
 }
 void Runway::startTakeoff(){
+    this.isBusy = true;
+    this.timeRemaining = this.takeoffTime;
 }
 int Runway::tickDown(){
-return 0;
+    if(this.isBusy == true){
+        this.timeRemaining--;
+    }
+    if(this.timeRemaining <= 0){
+        this.isBusy = false;
+    }
+    return timeRemaining;
 }
