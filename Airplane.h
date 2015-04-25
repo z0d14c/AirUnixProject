@@ -8,6 +8,7 @@ class Airplane {
    public:
     Airplane();
     int getGas();
+    int getTime();
     void decrementGas();
 };
 #endif
