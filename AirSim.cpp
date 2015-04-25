@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-	
 	int landTime = 1;
 	int goTime = 2;
 	double landProb = 0.5;
@@ -10,6 +9,14 @@ int main(int argc, char* argv[]){
 	int start = 0;
 	int end = 50;
 	int crashTime = 20;
+	
+	landTime = atoi(argv[0]);
+	goTime = atoi(argv[1]);
+	landProb = atoi(argv[2]);
+	goProb = atoi(argv[3]);
+	start = atoi(argv[4]);
+	end = atoi(argv[5]);
+	crashTime = atoi(argv[6]);
 	
 	BoolSource* isLanding = new BoolSource(landProb);
 	BoolSource* isTakingOff = new BoolSource(goProb);
@@ -29,7 +36,7 @@ int main(int argc, char* argv[]){
 		{
 			while(true)
 			{
-				plane = landing->dequeue();
+				plane = landing->dequeue()&;
 				if(plane->getGas() <= 0)
 				{
 					stats->plusCrashPlanes();
@@ -42,11 +49,13 @@ int main(int argc, char* argv[]){
 				runway->startLanding();
 		}
 		else if(!runway->isBusy() && going->count() > 0) {
-				plane = going->dequeue();
+				plane = going->dequeue()&;
 				stats->plusTakeoffPlanezs();
 				stats->plusTakeoffTime(plane->getTime());
 				runway->startTakeoff();
 		}
+		landing->updatePlanes();
+		going->updatePlanes();
 		runway->TickDown();
 	}
 		stats->printStats();
