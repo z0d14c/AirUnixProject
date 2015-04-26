@@ -1,5 +1,5 @@
 #include "Boolsource.h"
-#include <stdlib>
+#include <stdlib.h>
 #include <time>
 
 BoolSource::BoolSource(double prob){
