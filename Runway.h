@@ -8,7 +8,7 @@ class Runway {
     int landingTime; //time it takes a plane to land
     int takeoffTime; //time it takes a plane to takeoff
    public:
-    Runway();
+    Runway(int landTime, int takeoffTime);
     bool getBusy(); //is the plane occupied?
     void startLanding(); //start a landing for a plane
     void startTakeoff(); //start a takeoff for a plane

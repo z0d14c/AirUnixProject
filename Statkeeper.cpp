@@ -5,27 +5,27 @@ Statkeeper::Statkeeper(int simTime){
 }
 	void Statkeeper::plusTakeoffPlanes()
 	{
-		this.takeoffPlanes++;
+		this->takeoffPlanes++;
 	}
 	
 	void Statkeeper::plusLandedPlanes()
 	{
-		this.landedPlanes++;
+		this->landedPlanes++;
 	}
 	
 	void Statkeeper::plusCrashPlanes()
 	{
-		this.crashedPlanes++;
+		this->crashedPlanes++;
 	}	
 	
 	void Statkeeper::plusTakeoffTime(int time)
 	{
-		this.takeoffTime++;
+		this->takeoffTime++;
 		
 	}	
 	void Statkeeper::plusLandingTime(int time)
 	{
-		this.landingTime++;
+		this->landingTime++;
 	}
 	
 	int Statkeeper::avgTakeoffTime()

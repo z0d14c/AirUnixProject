@@ -5,7 +5,7 @@ class BoolSource {
    private:
     int prob;
    public:
-    BoolSource();
+    BoolSource(double prob);
     bool check();
 };
 #endif

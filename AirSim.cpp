@@ -4,7 +4,7 @@
 #include "Boolsource.cpp"
 #include "Runway.cpp"
 #include "Queue.cpp"
-#include "StatKeeper.cpp"
+#include "Statkeeper.cpp"
 
 
 using namespace std;
@@ -75,7 +75,7 @@ int main(int argc, char* argv[]){
 		}
 		else if(!runway->isBusy() && going->count() > 0) {
 				plane = going->dequeue()&;
-				stats->plusTakeoffPlanezs();
+				stats->plusTakeoffPlanes();
 				stats->plusTakeoffTime(plane->getTime());
 				runway->startTakeoff();
 		}
