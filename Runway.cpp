@@ -1,9 +1,7 @@
 #include "Runway.h"
 
-Runway::Runway(){
-}
 Runway::Runway(int landTime, int takeoffTime){
-    this->landingTime = landtime;
+    this->landingTime = landTime;
     this->takeoffTime = takeoffTime;
 }
 bool Runway::getBusy(){

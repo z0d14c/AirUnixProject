@@ -26,3 +26,6 @@ Statkeeper.o:
 
 Clean:
 	rm -f $(PROG) $(OBJS)
+
+clean:
+	rm -f $(PROG) $(OBJS)

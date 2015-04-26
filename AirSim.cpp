@@ -1,10 +1,10 @@
 #include <iostream>
 #include <stdlib.h>
-#include "Airplane.cpp"
-#include "Boolsource.cpp"
-#include "Runway.cpp"
-#include "Queue.cpp"
-#include "Statkeeper.cpp"
+#include "Airplane.h"
+#include "Boolsource.h"
+#include "Runway.h"
+#include "Queue.h"
+#include "Statkeeper.h"
 
 
 using namespace std;
@@ -39,11 +39,11 @@ int main(int argc, char* argv[]){
 	//Create objects
 	BoolSource* isLanding = new BoolSource(landProb);
 	BoolSource* isTakingOff = new BoolSource(goProb);
-	Queue* landing = new Queue(crashTime);
-	Queue* going = new Queue(crashTime);
+	Queue<Airplane>* landing = new Queue<Airplane>(crashTime);
+	Queue<Airplane>* going = new Queue<Airplane>(crashTime);
 	Statkeeper* stats = new Statkeeper(end - start);
 	Runway* runway = new Runway(landTime,goTime);
-	Airplane* plane;
+	Airplane plane(0);
 	
 	//Start loop
 	for(int cur = start; cur < end; cur++)
@@ -57,12 +57,12 @@ int main(int argc, char* argv[]){
 			going->enqueue();
 			
 		//Handle queues if runway is not busy
-		if(!runway->isBusy() && landing->count() > 0)
+		if(!runway->getBusy() && landing->count() > 0)
 		{
 			while(true)
 			{
-				plane = landing->dequeue()&;
-				if(plane->getGas() <= 0)
+				plane = landing->dequeue();
+				if(plane.getGas() <= 0)
 				{
 					stats->plusCrashPlanes();
 				}
@@ -70,20 +70,20 @@ int main(int argc, char* argv[]){
 					break;
 			}
 				stats->plusLandedPlanes();
-				stats->plusLandingTime(plane->getTime());
+				stats->plusLandingTime(plane.getTime());
 				runway->startLanding();
 		}
-		else if(!runway->isBusy() && going->count() > 0) {
-				plane = going->dequeue()&;
+		else if(!runway->getBusy() && going->count() > 0) {
+				plane = going->dequeue();
 				stats->plusTakeoffPlanes();
-				stats->plusTakeoffTime(plane->getTime());
+				stats->plusTakeoffTime(plane.getTime());
 				runway->startTakeoff();
 		}
 		
 		//Update planes and runway
 		landing->updatePlanes();
 		going->updatePlanes();
-		runway->TickDown();
+		runway->tickDown();
 	}
 		//Print stats from the StatKeeper
 		stats->printStats();

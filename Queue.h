@@ -1,6 +1,6 @@
-using namespace std;
 #ifndef QUEUE_H
 #define QUEUE_H
+using namespace std;
 #include <list>
 //template so that it can be an "Airplane" queue (T=airplane, in our case)
 template <class T>
@@ -9,7 +9,7 @@ class Queue {
     list<T> planelist;
 
    public:
-    Queue();
+    Queue(int crashtime); //constructor with initiated crashtime
     int crashed; //number of planes that have crashed
     int crashtime; //time or "gas" until crash
     void enqueue(); //add new plane

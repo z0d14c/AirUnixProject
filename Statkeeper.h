@@ -1,6 +1,7 @@
-using namespace std;
 #ifndef STATKEEPER_H
 #define STATKEEPER_H
+using namespace std;
+#include <iostream>
 class Statkeeper {
    private:
     int takeoffPlanes;
@@ -10,7 +11,7 @@ class Statkeeper {
     int landingTime;
     int takeoffTime;
     double avg1;
-    double ag2;
+    double avg2;
 
    public:
     Statkeeper(int simTime);

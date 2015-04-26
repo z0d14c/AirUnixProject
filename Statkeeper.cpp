@@ -49,6 +49,6 @@ Statkeeper::Statkeeper(int simTime){
 		cout << "The number of planes that landed: " << landedPlanes << endl;
 		cout << "The number of planes crashed: " << crashedPlanes << endl;
 		cout << "The average time a plane in the takeoff queue: " << avg1 << endl;
-		cout << "The average time a plane in the landing queue: " << avf2 << endl;
+		cout << "The average time a plane in the landing queue: " << avg2 << endl;
 		
 }

@@ -1,6 +1,6 @@
-using namespace std;
 #ifndef AIRPLANE_H
 #define AIRPLANE_H
+using namespace std;
 class Airplane {
    private:
     int gas; //only matters for landing planes, set to random amount
