@@ -11,6 +11,7 @@ int Airplane::getTime(){
 	return timeSpent;
 }
 void Airplane::decrementGas(){
+	//Decrements gas but also increases time spent in queue
 	gas--;
 	timeSpent++;
 }
