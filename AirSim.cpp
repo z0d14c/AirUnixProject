@@ -26,9 +26,9 @@ int main(int argc, char* argv[]){
 	if(argc > 1)
 		goTime = atoi(argv[1]);
 	if(argc > 2)
-		landProb = atoi(argv[2]);
+		landProb = atof(argv[2]);
 	if(argc > 3)
-		goProb = atoi(argv[3]);
+		goProb = atof(argv[3]);
 	if(argc > 4)
 		start = atoi(argv[4]);
 	if(argc > 5)
