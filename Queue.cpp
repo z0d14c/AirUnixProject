@@ -1,6 +1,7 @@
 
 #include "Queue.h"
 #include "Airplane.h"
+#include <iostream>
 template <class T>
 Queue<T>::Queue(int crashtime){
     this->crashtime = crashtime;
@@ -22,8 +23,10 @@ int Queue<T>::count(){
 }
 template <class T>
     void Queue<T>::updatePlanes(){
-    for (typename list<T>::iterator it=planelist.begin(); it != planelist.end(); ++it){
-            it->decrementGas();
-        }
+    typename list<T>::iterator it;
+    for(it=planelist.begin(); it!=planelist.end(); it++)
+    {
+       it->decrementGas();
+    }
 }
 template class Queue<Airplane>;

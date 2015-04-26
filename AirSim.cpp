@@ -51,29 +51,33 @@ int main(int argc, char* argv[]){
 		//Check Boolsource for plane entering landing queue
 		if(isLanding->check()){
 			landing->enqueue();
-			}
+        }
 			
 		//Check Boolsource for plane entering takeoff queue
 		if(isTakingOff->check()){
 			going->enqueue();
-			}
+        }
 			
 		//Handle queues if runway is not busy
 		if(!runway->getBusy() && landing->count() > 0)
 		{
-			while(true)
+		    bool noCrash = false;
+			while(landing->count() > 0 && noCrash == false)
 			{
 				plane = landing->dequeue();
+				int gas = plane.getGas();
 				if(plane.getGas() <= 0)
 				{
 					stats->plusCrashPlanes();
 				}
 				else
-					break;
+				{
+				    noCrash = true;
+				    stats->plusLandedPlanes();
+                    stats->plusLandingTime(plane.getTime());
+                    runway->startLanding();
+				}
 			}
-				stats->plusLandedPlanes();
-				stats->plusLandingTime(plane.getTime());
-				runway->startLanding();
 		}
 		else if(!runway->getBusy() && going->count() > 0) {
 				plane = going->dequeue();
@@ -81,7 +85,6 @@ int main(int argc, char* argv[]){
 				stats->plusTakeoffTime(plane.getTime());
 				runway->startTakeoff();
 		}
-		
 		//Update planes and runway
 		landing->updatePlanes();
 		going->updatePlanes();

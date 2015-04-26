@@ -3,7 +3,7 @@ using namespace std;
 #define BOOLSOURCE_H
 class BoolSource {
    private:
-    int prob;
+    double prob;
    public:
     BoolSource(double prob);
     bool check();

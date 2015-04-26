@@ -21,30 +21,26 @@ Statkeeper::Statkeeper(int simTime){
 	
 	void Statkeeper::plusTakeoffTime(int time)
 	{
-		this->takeoffTime++;
+		this->takeoffTime+=time;
 		
 	}	
 	void Statkeeper::plusLandingTime(int time)
 	{
-		this->landingTime++;
+		this->landingTime+=time;
 	}
 	
-	int Statkeeper::avgTakeoffTime()
+	void Statkeeper::avgTakeoffTime()
 	{
-		double avg1;
-		avg1 = takeoffTime / takeoffPlanes;		
-		return 0;
+		avg1 = (double)takeoffTime / (double)takeoffPlanes;
 }
-	int Statkeeper::avgLandingTime()
-	{		
-		double avg2;
-		avg2 = landedPlanes / landedPlanes;		
-		return 0;
+	void Statkeeper::avgLandingTime()
+	{
+		avg2 = (double)landingTime / (double)landedPlanes;
 }
 	void Statkeeper::printStats()
 	{
-		
-		
+		avgTakeoffTime();
+		avgLandingTime();
 		cout << "Total simulation time: " << simTime << endl;
 		cout << "The number of planes that took off: " << takeoffPlanes << endl;
 		cout << "The number of planes that landed: " << landedPlanes << endl;

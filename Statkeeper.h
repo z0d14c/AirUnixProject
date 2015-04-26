@@ -20,8 +20,8 @@ class Statkeeper {
     void plusCrashPlanes();
     void plusTakeoffTime(int time);
     void plusLandingTime(int time);
-    int avgTakeoffTime();
-    int avgLandingTime();
+    void avgTakeoffTime();
+    void avgLandingTime();
     void printStats();
 };
 #endif
