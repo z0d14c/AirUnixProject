@@ -2,6 +2,7 @@
 #include "Statkeeper.h"
 
 Statkeeper::Statkeeper(int simTime){
+    this->simTime = simTime;
 }
 	void Statkeeper::plusTakeoffPlanes()
 	{

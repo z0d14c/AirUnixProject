@@ -26,4 +26,4 @@ template <class T>
             it->decrementGas();
         }
 }
-template classmake  Queue<Airplane>;
+template class Queue<Airplane>;
